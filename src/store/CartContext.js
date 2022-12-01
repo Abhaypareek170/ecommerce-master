@@ -37,7 +37,7 @@ const CartContext = (props) => {
   useEffect(() => {
     axios
       .get(
-        `https://crudcrud.com/api/aedbcef7ab2b4d2799c162b5b49bb943/cart${email}`
+        `https://crudcrud.com/api/f4ddc46a933a494abc20745ec63d82f4/cart${email}`
       )
       .then((res) => {
         setData(res.data);
@@ -68,7 +68,7 @@ const CartContext = (props) => {
       setItems([...items, item]);
       axios
         .post(
-          `https://crudcrud.com/api/aedbcef7ab2b4d2799c162b5b49bb943/cart${email}`,
+          `https://crudcrud.com/api/f4ddc46a933a494abc20745ec63d82f4/cart${email}`,
           item
         )
         .then((res) => {
@@ -87,7 +87,7 @@ const CartContext = (props) => {
       const mainId = data[apiIndex]._id;
 
       axios.put(
-        `https://crudcrud.com/api/aedbcef7ab2b4d2799c162b5b49bb943/cart${email}/${mainId}`,
+        `https://crudcrud.com/api/f4ddc46a933a494abc20745ec63d82f4/cart${email}/${mainId}`,
         item,
         (item.quantity = quant)
       ).then(() => console.log(`successfull put`)).catch((err) => console.log(`put failed`))
@@ -109,7 +109,7 @@ const CartContext = (props) => {
       let apiIndex = data.findIndex((ele) => ele.id === item.id);
       const mainId = data[apiIndex]._id;
       axios.put(
-        `https://crudcrud.com/api/aedbcef7ab2b4d2799c162b5b49bb943/cart${email}/${mainId}`,
+        `https://crudcrud.com/api/f4ddc46a933a494abc20745ec63d82f4/cart${email}/${mainId}`,
         item,
         (item.quantity = quant)
       ).then(() => console.log(`after successfull put`)).catch((err) => console.log(`put failed`))
@@ -118,7 +118,7 @@ const CartContext = (props) => {
       setItems(newItem);
       let apiIndex = data.findIndex((ele) => ele.id === item.id);
       const mainId = data[apiIndex]._id;
-      axios.delete(`https://crudcrud.com/api/aedbcef7ab2b4d2799c162b5b49bb943/cart${email}/${mainId}`)
+      axios.delete(`https://crudcrud.com/api/f4ddc46a933a494abc20745ec63d82f4/cart${email}/${mainId}`)
 
     }
   };

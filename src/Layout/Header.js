@@ -28,7 +28,7 @@ const Header = (props) => {
                 {cartCntx.isLoggedIn?<Nav.Link href="/Auth"><button onClick={ logoutHandler}>Logout</button></Nav.Link>:<Nav.Link href="/Auth"><button>Login</button></Nav.Link>}
 
               </Nav>
-              <HeaderCartButton onClick={props.onClick}/>
+              {props.button?<HeaderCartButton onClick={props.onClick}/>:""}
             </Container>
           </Navbar>
           <h1 className="text-center" style={{backgroundColor:"#d3d3d3",padding: 40,

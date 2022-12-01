@@ -21,7 +21,7 @@ const Product = () => {
     <>
        <CartContext>
     {cartIsShown && <CartPage  onClose={hideCartHandler} />}
-      <Header onClick={showCartHandler}/>
+      <Header onClick={showCartHandler} button={true}/>
       <Cards/>
       <Footer/>
       </CartContext>
