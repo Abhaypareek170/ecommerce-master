@@ -1,5 +1,7 @@
 import React from "react";
 import ContactForm from "./ContactForm";
+import Footer from '../Layout/Footer'
+import Header from '../Layout/Header'
 
 const ContactPage = () => {
 
@@ -16,7 +18,9 @@ const ContactPage = () => {
       }
   return (
     <>
+      <Header/>
       <ContactForm onAddContact={contactHandler}/>
+      <Footer/>
     </>
   );
 };

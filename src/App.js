@@ -1,19 +1,22 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./Page/Home";
-import About from "./Page/About";
-import Store from "./Page/Store";
-import Contact from "./Page/Contact";
-import ProductDetail from "./Page/ProductDetail";
 import CartContext from "./store/CartContext";
 import Auth from "./Page/Auth";
 import Protected from "./Page/Protected";
+import LoadingSpinner from "./UI/LoadingSpinner"
 
-
-
+const Home = lazy(() => import("./Page/Home"));
+const About = lazy(() => import("./Page/About"));
+const Contact = lazy(() => import("./Page/Contact"));
+const ProductDetailPage = lazy(() => import("./Page/ProductDetailPage"));
+const Store = lazy(() => import("./Page/Store"));
 const App = () => {
   return (
     <>
+    <Suspense fallback={<div className="centered">
+            <LoadingSpinner />
+          </div>
+        }>
       <CartContext>
         <BrowserRouter>
           <div>
@@ -29,13 +32,14 @@ const App = () => {
               ></Route>
               <Route
                 path="/Store/:productId"
-                element={<Protected Component={ProductDetail} />}
+                element={<Protected Component={ProductDetailPage} />}
               ></Route>
               <Route path="*" element={<Home />}></Route>
             </Routes>
           </div>
         </BrowserRouter>
       </CartContext>
+      </Suspense>
     </>
   );
 };

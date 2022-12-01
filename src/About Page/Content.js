@@ -1,9 +1,13 @@
 import React from 'react'
 import './Content.css'
 import Band_img from './Band_img.png'
+import Footer from '../Layout/Footer'
+import Header from '../Layout/Header'
+
 const Content = () => {
   return (
     <>
+        <Header/>
         <section id="about">
         <h2>About</h2>
         <div>
@@ -13,7 +17,7 @@ const Content = () => {
                 Lorem ipsum dolor, sit amet consectetur rebates. The distinction, that arise from or to. The greater, therefore, an obstacle to the duties of the debts receives the very great importance to us that these are consequent to that question is answered, which was selected for the fault, it is often one of us, however, have any! Moreover, this is often not at once take the hardships of the life of harsh condemn, we are accusing him? Him whom something large cisterns.</p>
         </div>
         </section>
-        
+        <Footer/>
     </>
     )
     }

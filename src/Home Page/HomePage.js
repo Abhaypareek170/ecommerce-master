@@ -1,10 +1,12 @@
 import React from 'react'
-
+import Footer from '../Layout/Footer'
+import Header from '../Layout/Header'
 import './Home.css'
 
 const HomePage = () => {
   return (
     <>
+    <Header/>
     <header>
     <button className="latest-album text-center" style={{backgroundColor:"#d3d3d3",padding: 40,
     fontSize: 100 }} >Get our Latest Album</button><br></br>
@@ -52,6 +54,7 @@ const HomePage = () => {
             </div>
         </div>
         </section>
+        <Footer/>
     </>
   )
 }
